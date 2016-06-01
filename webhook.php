@@ -9,37 +9,37 @@ if(isset($messaging->message)) {
     $message = $messaging->message->text;
 	if( $message == 'じゃんけん' ){
         $post = <<< EOM
-        {
-            "recipient":{
-                 "id":"{$id}"
-            },
-            "message":{
-"attachment":{
-      "type": "template",
-      "payload": {
-        "template_type": "button",
-        "text": text,
-        "buttons": [
-          {
-            "type": "postback",
-            "title": "グー",
-            "payload": "rock"
-          },
-          {
-            "type": "postback",
-            "title": "チョキ",
-            "payload": "scissors"
-          },
-          {
-            "type": "postback",
-            "title": "パー",
-            "payload": "paper"
-          }
-        ]
-      }
-    }
-            }
-        }
+		{
+			"recipient":{
+				"id":"{$id}"
+			},
+			"message":{
+				"attachment":{
+					"type": "template",
+					"payload": {
+						"template_type": "button",
+						"text": $message,
+						"buttons": [
+							{
+								"type": "postback",
+								"title": "グー",
+								"payload": "rock"
+							},
+							{
+								"type": "postback",
+								"title": "チョキ",
+								"payload": "scissors"
+							},
+							{
+								"type": "postback",
+								"title": "パー",
+								"payload": "paper"
+							}
+						]
+					}   
+				}
+			}
+		}
     } else {
         $post = <<< EOM
         {
