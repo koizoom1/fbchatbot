@@ -7,15 +7,50 @@ $messaging = $json_object->entry{0}->messaging{0};
 if(isset($messaging->message)) {
     $id = $messaging->sender->id;
     $message = $messaging->message->text;
-    $post = <<< EOM
-    {
-        "recipient":{
-            "id":"{$id}"
-        },
-        "message":{
-            "text":"{$message}"
-        }
+	if( $message == 'じゃんけん' ){
+        $post = <<< EOM
+        {
+            "recipient":{
+                 "id":"{$id}"
+            },
+            "message":{
+"attachment":{
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": text,
+        "buttons": [
+          {
+            "type": "postback",
+            "title": "グー",
+            "payload": "rock"
+          },
+          {
+            "type": "postback",
+            "title": "チョキ",
+            "payload": "scissors"
+          },
+          {
+            "type": "postback",
+            "title": "パー",
+            "payload": "paper"
+          }
+        ]
+      }
     }
+            }
+        }
+    } else {
+        $post = <<< EOM
+        {
+            "recipient":{
+                 "id":"{$id}"
+            },
+            "message":{
+                "text":"{$message}"
+            }
+        }
+	}
 EOM;
 
     api_send_request($access_token, $post);
