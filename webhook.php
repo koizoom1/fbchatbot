@@ -64,6 +64,7 @@ $messaging = $json_object->entry{0}->messaging{0};
 if(isset($messaging->message)) {
     $id = $messaging->sender->id;
     $message =  $messaging->message->text;
+	error_log($message);
 	if( $message == 'じゃんけん' ){
 	/*
     $post = <<< EOM
