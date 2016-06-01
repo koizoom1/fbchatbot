@@ -168,6 +168,7 @@ $post = <<< EOM
     }
 }
 EOM;
+    api_send_request($access_token, $post,$message);
 	} else {
     $post = <<< EOM
     {
