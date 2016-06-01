@@ -158,14 +158,12 @@ $post = <<< EOM
 	  }
 	}
 	*/
-    "message":{
         "attachment":{
             "type":"image",
             "payload":{
                 "url":"https://dl.dropboxusercontent.com/u/18796572/gibasachan/sd_gibasachan.jpg"
             }
         }
-    }
     }
 }
 EOM;
