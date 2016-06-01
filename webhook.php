@@ -65,6 +65,7 @@ if(isset($messaging->message)) {
     $id = $messaging->sender->id;
     $message =  $messaging->message->text;
 	if( $message == 'じゃんけん' ){
+	/*
     $post = <<< EOM
     {
         "recipient":{
@@ -97,6 +98,35 @@ if(isset($messaging->message)) {
 			}
         }
     }
+EOM;
+*/
+$post = <<< EOM
+{
+    "recipient":{
+        "id":"{$from_user_id}"
+    },
+    "message":{
+        "attachment":{
+            "type":"template",
+            "payload":{
+                "template_type":"button",
+                "text":"What do you want to do next?",
+                "buttons":[
+                    {
+                        "type":"web_url",
+                        "url":"https://messengerplatform.fb.com",
+                        "title":"Show Website"
+                    },
+                    {
+                        "type":"postback",
+                        "title":"Start Chatting",
+                        "payload":"USER_DEFINED_PAYLOAD"
+                    }
+                ]
+            }
+        }
+    }
+}
 EOM;
 	} else {
     $post = <<< EOM
