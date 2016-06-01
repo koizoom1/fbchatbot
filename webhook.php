@@ -64,7 +64,18 @@ $messaging = $json_object->entry{0}->messaging{0};
 if(isset($messaging->message)) {
     $id = $messaging->sender->id;
     $message = 'マカロンはお金持ちのお菓子';
-	if( true ){
+	if( false ){
+    $post = <<< EOM
+    {
+        "recipient":{
+            "id":"{$id}"
+        },
+        "message":{
+            "text":"aaaa"
+        }
+    }
+EOM;
+	} else {
     $post = <<< EOM
     {
         "recipient":{
