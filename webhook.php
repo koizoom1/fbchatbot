@@ -6,7 +6,7 @@ $messaging = $json_object->entry{0}->messaging{0};
 
 if(isset($messaging->message)) {
     $id = $messaging->sender->id;
-    $message = 'ねばぎば！';
+    $message = $messaging->message->text;
     $post = <<< EOM
     {
         "recipient":{
