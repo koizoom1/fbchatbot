@@ -1,5 +1,5 @@
 <?php
-$access_token = "EAABZCZBOnpfiMBAGE6NVabf23NP8OVtHVd0ncC4938PSkJf6aWuqW4oZBkxzcndBFCZBXSz27QsvqRAfS8NwLcvZCTHQbgjjEjNAlhum6xF3equpQ6m2y0DuDLPZBnzeggVFqWe2IZA1rzJyMeI21Hg7IQGxf1zqq406HoBEpgmLwZDZD";
+$access_token = "EAABZCZBOnpfiMBAITE7qgXFfkPfruG7ab9kM4l0ZCuUUeuWlz72gomIA0W3mer3bzVZBMduRHLxm6Cz0jD8EojQj7zPU97etWo3vDr3UMxpyiyURRElSNOTT8u66tptV8AliNrMWZANHq1OZBZBxgSgEjfwZAH8pgkDB5g8p2duNCgZDZD";
 $json_string = file_get_contents('php://input');
 $json_object = json_decode($json_string);
 $messaging = $json_object->entry{0}->messaging{0};
@@ -127,6 +127,7 @@ $post = <<< EOM
             }
         }
 		*/
+	/*
 	"attachment": {
 	  "type": "template",
 	  "payload": {
@@ -156,6 +157,15 @@ $post = <<< EOM
 		}]
 	  }
 	}
+	*/
+    "message":{
+        "attachment":{
+            "type":"image",
+            "payload":{
+                "url":"https://dl.dropboxusercontent.com/u/18796572/gibasachan/sd_gibasachan.jpg"
+            }
+        }
+    }
     }
 }
 EOM;
