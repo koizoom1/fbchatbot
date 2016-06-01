@@ -8,6 +8,7 @@ if(isset($messaging->message)) {
     $id = $messaging->sender->id;
     $message = $messaging->message->text;
 	if( $message == 'じゃんけん' ){
+	/*
         $post = <<< EOM
 		{
 			"recipient":{
@@ -41,6 +42,7 @@ if(isset($messaging->message)) {
 			}
 		}
 		EOM;
+		*/
     } else {
         $post = <<< EOM
         {
