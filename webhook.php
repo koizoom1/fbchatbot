@@ -40,6 +40,7 @@ if(isset($messaging->message)) {
 				}
 			}
 		}
+		EOM;
     } else {
         $post = <<< EOM
         {
@@ -50,8 +51,8 @@ if(isset($messaging->message)) {
                 "text":"{$message}"
             }
         }
+		EOM;
 	}
-EOM;
 
     api_send_request($access_token, $post);
 }
