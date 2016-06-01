@@ -180,11 +180,11 @@ EOM;
     }
 EOM;
 }
-    api_send_request($access_token, $post);
+    api_send_request($access_token, $post,$message);
 }
 
 function api_send_request($access_token, $post) {
-    error_log("api_get_message_content_request start");
+    error_log("api_get_message_content_request start".$message);
     $url = "https://graph.facebook.com/v2.6/me/messages?access_token={$access_token}";
     $headers = array(
             "Content-Type: application/json"
