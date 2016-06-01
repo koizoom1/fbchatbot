@@ -71,7 +71,30 @@ if(isset($messaging->message)) {
             "id":"{$id}"
         },
         "message":{
-            "text":"aaaa"
+			"attachment":{
+				"type": "template",
+				"payload": {
+					"template_type": "button",
+					"text": $message,
+					"buttons": [
+						{
+							"type": "postback",
+							"title": "グー",
+							"payload": "rock"
+						},
+						{
+							"type": "postback",
+							"title": "チョキ",
+							"payload": "scissors"
+						},
+						{
+							"type": "postback",
+							"title": "パー",
+							"payload": "paper"
+						}
+					]
+				}
+			}
         }
     }
 EOM;
