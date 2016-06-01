@@ -4,9 +4,9 @@ $json_string = file_get_contents('php://input');
 $json_object = json_decode($json_string);
 $messaging = $json_object->entry{0}->messaging{0};
 
-if(isset($messaging->message)) {
-    $id = $messaging->sender->id;
-    $message = $messaging->message->text;
+//if(isset($messaging->message)) {
+//    $id = $messaging->sender->id;
+//    $message = $messaging->message->text;
 	//if( $message == 'じゃんけん' ){
 	/*
         $post = <<< EOM
@@ -44,6 +44,7 @@ if(isset($messaging->message)) {
 		EOM;
 		*/
     //} else {
+	/*
         $post = <<< EOM
         {
             "recipient":{
@@ -54,7 +55,25 @@ if(isset($messaging->message)) {
             }
         }
 		EOM;
+		*/
 	//}
+
+//    api_send_request($access_token, $post);
+//}
+
+if(isset($messaging->message)) {
+    $id = $messaging->sender->id;
+    $message = 'マカロンはお金持ちのお菓子';
+    $post = <<< EOM
+    {
+        "recipient":{
+            "id":"{$id}"
+        },
+        "message":{
+            "text":"{$message}"
+        }
+    }
+EOM;
 
     api_send_request($access_token, $post);
 }
