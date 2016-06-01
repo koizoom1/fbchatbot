@@ -7,7 +7,7 @@ $messaging = $json_object->entry{0}->messaging{0};
 if(isset($messaging->message)) {
     $id = $messaging->sender->id;
     $message = $messaging->message->text;
-	if( $message == 'じゃんけん' ){
+	//if( $message == 'じゃんけん' ){
 	/*
         $post = <<< EOM
 		{
@@ -43,7 +43,7 @@ if(isset($messaging->message)) {
 		}
 		EOM;
 		*/
-    } else {
+    //} else {
         $post = <<< EOM
         {
             "recipient":{
@@ -54,7 +54,7 @@ if(isset($messaging->message)) {
             }
         }
 		EOM;
-	}
+	//}
 
     api_send_request($access_token, $post);
 }
