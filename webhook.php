@@ -166,7 +166,7 @@ $post = <<< EOM
 				elements:{
                         title: "title",
                         image_url: "https://dl.dropboxusercontent.com/u/18796572/gibasachan/sd_gibasachan.jpg",
-                        subtitle: "検索結果",
+                        subtitle: "検索結果"
                         buttons: [
                             {
                                 type: "web_url",
@@ -178,6 +178,7 @@ $post = <<< EOM
             }
         }
     }
+	api_get_user_profile_request($access_token, $from_user_id);
 }
 EOM;
     //api_send_request($access_token, $post,$message);
@@ -192,8 +193,9 @@ EOM;
         }
     }
 EOM;
-}
     api_send_request($access_token, $post,$message);
+}
+
 }
 
 function api_send_request($access_token, $post,$message) {
@@ -207,6 +209,19 @@ function api_send_request($access_token, $post,$message) {
     curl_setopt($curl, CURLOPT_POST, true);
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    $output = curl_exec($curl);
+}
+
+function api_get_user_profile_request($access_token, $from_user_id) {
+    $url = "https://graph.facebook.com/v2.6/{$from_user_id}?fields=first_name,last_name,profile_pic&access_token={$access_token}";
+    $headers = array(
+        "Content-Type: application/json"
+    );
+
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($curl);
