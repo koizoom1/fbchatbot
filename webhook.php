@@ -67,7 +67,6 @@ if(isset($messaging->message)) {
 	error_log($message);
 	if( $message == 'じゃんけん' ){
 	api_get_user_profile_request($access_token, $from_user_id);
-    //api_send_request($access_token, $post,$message);
 	} else {
     $post = <<< EOM
     {
@@ -101,6 +100,7 @@ function api_send_request($access_token, $post,$message) {
 }
 
 function api_get_user_profile_request($access_token, $from_user_id) {
+error_log("api_get_user_profile_request start".$from_user_id);
     $url = "https://graph.facebook.com/v2.6/{$from_user_id}?fields=first_name,last_name,profile_pic&access_token={$access_token}";
     $headers = array(
         "Content-Type: application/json"
