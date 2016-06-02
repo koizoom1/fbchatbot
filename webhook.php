@@ -160,15 +160,27 @@ $post = <<< EOM
 	}
 	*/
         "attachment":{
-            "type":"image",
+            "type":"template",
             "payload":{
-                "url":"https://dl.dropboxusercontent.com/u/18796572/gibasachan/sd_gibasachan.jpg"
+				template_type: "generic",
+				elements:{
+                        title: "title",
+                        image_url: "https://dl.dropboxusercontent.com/u/18796572/gibasachan/sd_gibasachan.jpg",
+                        subtitle: "検索結果",
+                        buttons: [
+                            {
+                                type: "web_url",
+                                url: "https://dl.dropboxusercontent.com/u/18796572/gibasachan/sd_gibasachan.jpg",
+                                title: "View Web Page",
+                            }
+                        ]
+				}
             }
         }
     }
 }
 EOM;
-    api_send_request($access_token, $post,$message);
+    //api_send_request($access_token, $post,$message);
 	} else {
     $post = <<< EOM
     {
