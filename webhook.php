@@ -178,9 +178,9 @@ $post = <<< EOM
             }
         }
     }
-	api_get_user_profile_request($access_token, $from_user_id);
 }
 EOM;
+	api_get_user_profile_request($access_token, $from_user_id);
     //api_send_request($access_token, $post,$message);
 	} else {
     $post = <<< EOM
