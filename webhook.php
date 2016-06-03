@@ -4,65 +4,24 @@ $json_string = file_get_contents('php://input');
 $json_object = json_decode($json_string);
 $messaging = $json_object->entry{0}->messaging{0};
 
-//if(isset($messaging->message)) {
-//    $id = $messaging->sender->id;
-//    $message = $messaging->message->text;
-	//if( $message == 'じゃんけん' ){
-	/*
-        $post = <<< EOM
-		{
-			"recipient":{
-				"id":"{$id}"
-			},
-			"message":{
-				"attachment":{
-					"type": "template",
-					"payload": {
-						"template_type": "button",
-						"text": $message,
-						"buttons": [
-							{
-								"type": "postback",
-								"title": "グー",
-								"payload": "rock"
-							},
-							{
-								"type": "postback",
-								"title": "チョキ",
-								"payload": "scissors"
-							},
-							{
-								"type": "postback",
-								"title": "パー",
-								"payload": "paper"
-							}
-						]
-					}   
-				}
-			}
-		}
-		EOM;
-		*/
-    //} else {
-	/*
-        $post = <<< EOM
-        {
-            "recipient":{
-                 "id":"{$id}"
-            },
-            "message":{
-                "text":"{$message}"
-            }
+$id = $messaging->sender->id;
+if(isset($messaging->postback)) {
+	$payload =  $messaging->postback->payload;
+    $post = <<< EOM
+    {
+        "recipient":{
+            "id":"{$id}"
+        },
+        "message":{
+            "text":"{$payload}を出しました！"
         }
-		EOM;
-		*/
-	//}
-
-//    api_send_request($access_token, $post);
-//}
+    }
+EOM;
+    api_send_request($access_token, $post,$message);
+}
 
 if(isset($messaging->message)) {
-    $id = $messaging->sender->id;
+    //$id = $messaging->sender->id;
     $message =  $messaging->message->text;
 	error_log($message);
 	if( $message == 'じゃんけん' ){
@@ -81,17 +40,17 @@ if(isset($messaging->message)) {
           {
             "type":"postback",
             "title":"グー",
-            "payload":"USER_DEFINED_PAYLOAD"
+            "payload":"rock"
           },
           {
             "type":"postback",
             "title":"チョキ",
-            "payload":"USER_DEFINED_PAYLOAD"
+            "payload":"scissors"
           },
 		            {
             "type":"postback",
             "title":"パー",
-            "payload":"USER_DEFINED_PAYLOAD"
+            "payload":"paper"
           }
         ]
       }
