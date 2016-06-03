@@ -76,16 +76,21 @@ if(isset($messaging->message)) {
       "type":"template",
       "payload":{
         "template_type":"button",
-        "text":"What do you want to do next?",
+        "text":"じゃんけんぽん！",
         "buttons":[
           {
-            "type":"web_url",
-            "url":"https://petersapparel.parseapp.com",
-            "title":"Show Website"
+            "type":"postback",
+            "title":"グー",
+            "payload":"USER_DEFINED_PAYLOAD"
           },
           {
             "type":"postback",
-            "title":"Start Chatting",
+            "title":"チョキ",
+            "payload":"USER_DEFINED_PAYLOAD"
+          },
+		            {
+            "type":"postback",
+            "title":"パー",
             "payload":"USER_DEFINED_PAYLOAD"
           }
         ]
