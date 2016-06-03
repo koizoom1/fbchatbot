@@ -66,7 +66,8 @@ if(isset($messaging->message)) {
     $message =  $messaging->message->text;
 	error_log($message);
 	if( $message == 'じゃんけん' ){
-	api_get_user_profile_request($access_token, $from_user_id);
+	//api_get_user_profile_request($access_token, $from_user_id);
+	api_send_request($access_token, $post,$message);
 	} else {
     $post = <<< EOM
     {
