@@ -72,7 +72,7 @@ if(isset($messaging->message)) {
             "id":"{$id}"
         },
         "message":{
-            "text":"じゃんけんぽん"
+            "text":"{$id}"
         }
     }
 EOM;
