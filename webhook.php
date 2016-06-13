@@ -60,6 +60,68 @@ if(isset($messaging->message)) {
 EOM;
 	//api_get_user_profile_request($access_token, $from_user_id);
 	api_send_request($access_token, $post,$message);
+	} else if( $message == 'ゲーム' ){
+$post = <<< EOM
+{
+    "recipient":{
+        "id":"{$id}"
+    },
+    "message":{
+        "attachment":{
+            "type":"template",
+            "payload":{
+                "template_type":"generic",
+                "elements":[
+                    {
+                        "title":"Classic White T-Shirt",
+                        "image_url":"https://lh5.googleusercontent.com/WMnm1C09vzUreZ1_GkMX62835sqXnNQUjA81Jb3tCS851PeEI5uM9l5___RE9R6u1kvTDQ",
+                        "subtitle":"Soft white cotton t-shirt is back in style",
+                        "buttons":[
+                            {
+                                "type":"web_url",
+                                "url":"https://messengerplatform.fb.com",
+                                "title":"View Item"
+                            },
+                            {
+                                "type":"web_url",
+                                "url":"https://developers.facebook.com/docs/messenger-platform",
+                                "title":"Buy Item"
+                            },
+                            {
+                                "type":"postback",
+                                "title":"Bookmark Item",
+                                "payload":"USER_DEFINED_PAYLOAD_FOR_ITEM100"
+                            }                            
+                        ]
+                    },
+                    {
+                        "title":"Classic Grey T-Shirt",
+                        "image_url":"https://lh3.googleusercontent.com/-FhcA_-jzb7Nau1zxOanijNaiDyhV1BWdPJfTEhvya_D4aK9GclZBEXwBR6-Pph5tBn6xA",
+                        "subtitle":"Soft gray cotton t-shirt is back in style",
+                        "buttons":[
+                            {
+                                "type":"web_url",
+                                "url":"https://messengerplatform.fb.com",
+                                "title":"View Item"
+                            },
+                            {
+                                "type":"web_url",
+                                "url":"https://developers.facebook.com/docs/messenger-platform",
+                                "title":"Buy Item"
+                            },
+                            {
+                                "type":"postback",
+                                "title":"Bookmark Item",
+                                "payload":"USER_DEFINED_PAYLOAD_FOR_ITEM101"
+                            }                            
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
+EOM;
 	} else {
     $post = <<< EOM
     {
