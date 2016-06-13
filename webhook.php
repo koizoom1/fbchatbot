@@ -63,64 +63,47 @@ EOM;
 	} else if( $message == 'ゲーム' ){
 $post = <<< EOM
 {
-    "recipient":{
-        "id":"{$id}"
+    recipient: {
+      id: recipientId
     },
-    "message":{
-        "attachment":{
-            "type":"template",
-            "payload":{
-                "template_type":"generic",
-                "elements":[
-                    {
-                        "title":"Classic White T-Shirt",
-                        "image_url":"https://lh5.googleusercontent.com/WMnm1C09vzUreZ1_GkMX62835sqXnNQUjA81Jb3tCS851PeEI5uM9l5___RE9R6u1kvTDQ",
-                        "subtitle":"Soft white cotton t-shirt is back in style",
-                        "buttons":[
-                            {
-                                "type":"web_url",
-                                "url":"https://messengerplatform.fb.com",
-                                "title":"View Item"
-                            },
-                            {
-                                "type":"web_url",
-                                "url":"https://developers.facebook.com/docs/messenger-platform",
-                                "title":"Buy Item"
-                            },
-                            {
-                                "type":"postback",
-                                "title":"Bookmark Item",
-                                "payload":"USER_DEFINED_PAYLOAD_FOR_ITEM100"
-                            }                            
-                        ]
-                    },
-                    {
-                        "title":"Classic Grey T-Shirt",
-                        "image_url":"https://lh3.googleusercontent.com/-FhcA_-jzb7Nau1zxOanijNaiDyhV1BWdPJfTEhvya_D4aK9GclZBEXwBR6-Pph5tBn6xA",
-                        "subtitle":"Soft gray cotton t-shirt is back in style",
-                        "buttons":[
-                            {
-                                "type":"web_url",
-                                "url":"https://messengerplatform.fb.com",
-                                "title":"View Item"
-                            },
-                            {
-                                "type":"web_url",
-                                "url":"https://developers.facebook.com/docs/messenger-platform",
-                                "title":"Buy Item"
-                            },
-                            {
-                                "type":"postback",
-                                "title":"Bookmark Item",
-                                "payload":"USER_DEFINED_PAYLOAD_FOR_ITEM101"
-                            }                            
-                        ]
-                    }
-                ]
-            }
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "rift",
+            subtitle: "Next-generation virtual reality",
+            item_url: "https://www.oculus.com/en-us/rift/",               
+            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+            buttons: [{
+              type: "web_url",
+              url: "https://www.oculus.com/en-us/rift/",
+              title: "Open Web URL"
+            }, {
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for first bubble",
+            }],
+          }, {
+            title: "touch",
+            subtitle: "Your Hands, Now in VR",
+            item_url: "https://www.oculus.com/en-us/touch/",               
+            image_url: "http://messengerdemo.parseapp.com/img/touch.png",
+            buttons: [{
+              type: "web_url",
+              url: "https://www.oculus.com/en-us/touch/",
+              title: "Open Web URL"
+            }, {
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for second bubble",
+            }]
+          }]
         }
+      }
     }
-}
+  }
 EOM;
 	} else {
     $post = <<< EOM
