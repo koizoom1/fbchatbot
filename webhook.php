@@ -64,7 +64,7 @@ EOM;
 $post = <<< EOM
 {
   "recipient":{
-    "id":"1089954324411137"
+    "id":"{$id}"
   },
   "message":{
     "attachment":{
@@ -121,6 +121,7 @@ $post = <<< EOM
     }
   }
 }
+    api_send_request($access_token, $post,$message);
 EOM;
 	} else {
     $post = <<< EOM
