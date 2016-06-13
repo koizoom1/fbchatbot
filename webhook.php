@@ -74,7 +74,7 @@ $post = <<< EOM
         "elements":[
           {
             "title":"Classic White T-Shirt",
-            "image_url":"http://petersapparel.parseapp.com/img/item100-thumb.png",
+            "image_url":"https://lh3.googleusercontent.com/-FhcA_-jzb7Nau1zxOanijNaiDyhV1BWdPJfTEhvya_D4aK9GclZBEXwBR6-Pph5tBn6xA=s190",
             "subtitle":"Soft white cotton t-shirt is back in style",
             "buttons":[
               {
@@ -96,7 +96,7 @@ $post = <<< EOM
           },
           {
             "title":"Classic Grey T-Shirt",
-            "image_url":"http://petersapparel.parseapp.com/img/item101-thumb.png",
+            "image_url":"https://lh3.googleusercontent.com/9Ex9NjwjQfds7-_g7JbQuGfFsNqgwon-4ymhp6UAZNhNFvvha5T0bsYKoGdJR5G5MN-izQ",
             "subtitle":"Soft gray cotton t-shirt is back in style",
             "buttons":[
               {
@@ -121,8 +121,8 @@ $post = <<< EOM
     }
   }
 }
-    api_send_request($access_token, $post,$message);
 EOM;
+    api_send_request($access_token, $post,$message);
 	} else {
     $post = <<< EOM
     {
