@@ -63,47 +63,64 @@ EOM;
 	} else if( $message == 'ゲーム' ){
 $post = <<< EOM
 {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      attachment: {
-        type: "template",
-        payload: {
-          template_type: "generic",
-          elements: [{
-            title: "rift",
-            subtitle: "Next-generation virtual reality",
-            item_url: "https://www.oculus.com/en-us/rift/",               
-            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
-            buttons: [{
-              type: "web_url",
-              url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL"
-            }, {
-              type: "postback",
-              title: "Call Postback",
-              payload: "Payload for first bubble",
-            }],
-          }, {
-            title: "touch",
-            subtitle: "Your Hands, Now in VR",
-            item_url: "https://www.oculus.com/en-us/touch/",               
-            image_url: "http://messengerdemo.parseapp.com/img/touch.png",
-            buttons: [{
-              type: "web_url",
-              url: "https://www.oculus.com/en-us/touch/",
-              title: "Open Web URL"
-            }, {
-              type: "postback",
-              title: "Call Postback",
-              payload: "Payload for second bubble",
-            }]
-          }]
-        }
+  "recipient":{
+    "id":"{$id}"
+  },
+  "message":{
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"generic",
+        "elements":[
+          {
+            "title":"Classic White T-Shirt",
+            "image_url":"http://petersapparel.parseapp.com/img/item100-thumb.png",
+            "subtitle":"Soft white cotton t-shirt is back in style",
+            "buttons":[
+              {
+                "type":"web_url",
+                "url":"https://petersapparel.parseapp.com/view_item?item_id=100",
+                "title":"View Item"
+              },
+              {
+                "type":"web_url",
+                "url":"https://petersapparel.parseapp.com/buy_item?item_id=100",
+                "title":"Buy Item"
+              },
+              {
+                "type":"postback",
+                "title":"Bookmark Item",
+                "payload":"USER_DEFINED_PAYLOAD_FOR_ITEM100"
+              }              
+            ]
+          },
+          {
+            "title":"Classic Grey T-Shirt",
+            "image_url":"http://petersapparel.parseapp.com/img/item101-thumb.png",
+            "subtitle":"Soft gray cotton t-shirt is back in style",
+            "buttons":[
+              {
+                "type":"web_url",
+                "url":"https://petersapparel.parseapp.com/view_item?item_id=101",
+                "title":"View Item"
+              },
+              {
+                "type":"web_url",
+                "url":"https://petersapparel.parseapp.com/buy_item?item_id=101",
+                "title":"Buy Item"
+              },
+              {
+                "type":"postback",
+                "title":"Bookmark Item",
+                "payload":"USER_DEFINED_PAYLOAD_FOR_ITEM101"
+              }              
+            ]
+          }
+        ]
       }
     }
   }
+}
 EOM;
 	} else {
     $post = <<< EOM
