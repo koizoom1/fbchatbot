@@ -64,7 +64,7 @@ EOM;
 $post = <<< EOM
 {
   "recipient":{
-    "id":"{$id}"
+    "id":"1089954324411137"
   },
   "message":{
     "attachment":{
