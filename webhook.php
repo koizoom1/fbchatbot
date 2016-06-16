@@ -38,7 +38,7 @@ if(isset($messaging->message)) {
 	$lines = explode('\n',$content);
 	$count = 0;
 	foreach ($lines as $line) {
-		$ret = str_getcsv($line);
+		$ret = explode('\n',$line);
 		$colcnt = 0;
 		foreach ($ret as $col) {
 			$csvary[$count][$colcnt] = $col;
@@ -116,7 +116,7 @@ $post = <<< EOM
               {
                 "type":"postback",
                 "title":"{$csvary[0][8]}",
-                "payload":"aaa"
+                "payload":"{$csvary[0][9]}"
               }              
             ]
           }
