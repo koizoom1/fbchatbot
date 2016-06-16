@@ -183,7 +183,7 @@ function build_game($id,$num){
 	$button2 = $csvary[$num][6];
 	$payload2 = $csvary[$num][7];
 	$button3 = $csvary[$num][8];
-	$payload3 = $csvary[$num][9];
+	$payload3 = trim($csvary[$num][9]);
 $post = <<< EOM
 {
   "recipient":{
