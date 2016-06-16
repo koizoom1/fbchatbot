@@ -101,8 +101,8 @@ $post = <<< EOM
               },
               {
                 "type":"postback",
-                "title":"{$csvary[0][8]}",
-                "payload":"{$csvary[0][9]}"
+                "title":"Bookmark Item",
+                "payload":"USER_DEFINED_PAYLOAD_FOR_ITEM100"
               }              
             ]
           }
