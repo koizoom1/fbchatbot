@@ -126,6 +126,7 @@ $post = <<< EOM
   }
 }
 EOM;
+error_log($post);
     api_send_request($access_token, $post,$message);
 	} else {
     $post = <<< EOM
