@@ -8,6 +8,11 @@ $url = 'https://docs.google.com/uc?authuser=0&id=0B3suUrhlktR0QXYyamItc1I3bjQ&ex
 $id = $messaging->sender->id;
 if(isset($messaging->postback)) {
 	$payload =  $messaging->postback->payload;
+	
+	if(ctype_digit($payload)){
+	$post = build_game($id,(int) $payload)
+    api_send_request($access_token, $post,$message);
+	} else {
     $post = <<< EOM
     {
         "recipient":{
@@ -19,6 +24,7 @@ if(isset($messaging->postback)) {
     }
 EOM;
     api_send_request($access_token, $post,$message);
+	}
 }
 
 if(isset($messaging->message)) {
@@ -29,7 +35,7 @@ if(isset($messaging->message)) {
 	$csvary[] = str_getcsv($content);
 	
 	error_log($message);
-	error_log($csvary[0][1]);
+	//error_log($csvary[0][1]);
 	if( $message == 'じゃんけん' ){
     $post = <<< EOM
     {
@@ -173,4 +179,47 @@ error_log("api_get_user_profile_request start".$from_user_id);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($curl);
+}
+
+function build_game($id,$num){
+$post = <<< EOM
+{
+  "recipient":{
+    "id":"{$id}"
+  },
+  "message":{
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"generic",
+        "elements":[
+          {
+            "title":"$csvary[$num][1]",
+            "image_url":"https://lh3.googleusercontent.com/-FhcA_-jzb7Nau1zxOanijNaiDyhV1BWdPJfTEhvya_D4aK9GclZBEXwBR6-Pph5tBn6xA=s190",
+            "subtitle":"$csvary[$num][2]",
+            "buttons":[
+              {
+                "type":"postback",
+                "title":"$csvary[$num][4]",
+                "payload":"$csvary[$num][5]"
+              },
+              {
+                "type":"postback",
+                "title":"$csvary[$num][6]",
+                "payload":"$csvary[$num][7]"
+              },
+              {
+                "type":"postback",
+                "title":"$csvary[$num][8]",
+                "payload":"$csvary[$num][9]"
+              }              
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+EOM;
+
 }
