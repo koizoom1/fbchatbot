@@ -32,7 +32,20 @@ if(isset($messaging->message)) {
     $message =  $messaging->message->text;
 	
 	$content = file_get_contents($url); // HTMLを取得
-	$csvary[] = str_getcsv($content);
+	//$csvary[] = str_getcsv($content);
+	$csvary = array();
+	
+	$lines = explode('\n',$content);
+	$count = 0;
+	foreach ($lines as $line) {
+		$ret[] = str_getcsv($line);
+		$colcnt = 0;
+		foreach ($ret as $col) {
+			$csvary[$count][$colcnt] = $col;
+			$colcnt++;
+		}
+		$count++;
+	}
 	
 	
 	error_log($message);
@@ -103,7 +116,7 @@ $post = <<< EOM
               {
                 "type":"postback",
                 "title":"{$csvary[0][8]}",
-                "payload":"{$csvary[0][9]}"
+                "payload":"aaa"
               }              
             ]
           }
