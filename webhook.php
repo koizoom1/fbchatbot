@@ -32,7 +32,12 @@ if(isset($messaging->message)) {
     $message =  $messaging->message->text;
 	
 	$content = file_get_contents($url); // HTMLを取得
-	$csvary[] = str_getcsv($content);
+	//$csvary[] = str_getcsv($content);
+	
+	$lines = str_getcsv($buf, "\n");
+	foreach ($lines as $line) {
+		$csvary[] = str_getcsv($line);
+	}
 	
 	error_log($message);
 	error_log($csvary[0][9]);
