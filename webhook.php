@@ -116,7 +116,7 @@ $post = <<< EOM
               {
                 "type":"postback",
                 "title":"{$csvary[0][8]}",
-                "payload":"{$csvary[0][9]}"
+                "payload":"aaa"
               }              
             ]
           }
@@ -126,7 +126,7 @@ $post = <<< EOM
   }
 }
 EOM;
-error_log($post);
+//error_log($post);
     api_send_request($access_token, $post,$message);
 	} else {
     $post = <<< EOM
@@ -223,6 +223,6 @@ $post = <<< EOM
   }
 }
 EOM;
-error_log($post);
+//error_log($post);
 return $post;
 }
