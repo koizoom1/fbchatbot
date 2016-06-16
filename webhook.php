@@ -10,7 +10,7 @@ if(isset($messaging->postback)) {
 	$payload =  $messaging->postback->payload;
 	
 	if(ctype_digit($payload)){
-	$post = build_game($id,(int) $payload)
+	$post = build_game($id,$payload);
     api_send_request($access_token, $post,$message);
 	} else {
     $post = <<< EOM
