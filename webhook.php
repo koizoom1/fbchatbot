@@ -35,8 +35,8 @@ if(isset($messaging->message)) {
 	//$csvary[] = str_getcsv($content);
 	$csvary = array();
 	
-	//$lines = explode('\n',$content);
-	$lines = str_getcsv(convertEOL($content),'\n');
+	$lines = explode('\n',convertEOL($content));
+	//$lines = str_getcsv(convertEOL($content),'\n');
 	$count = 0;
 	foreach ($lines as $line) {
 		//$ret = explode(',',$line);
