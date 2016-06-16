@@ -177,12 +177,12 @@ function build_game($id,$num){
 	$title = $csvary[$num][1];
 	$subtitle = $csvary[$num][2];
 	$imgurl = $csvary[$num][3];
-	$button1 = {$csvary[$num][4];
-	$payload1 = {$csvary[$num][5];
-	$button2 = {$csvary[$num][6];
-	$payload2 = {$csvary[$num][7];
-	$button3 = {$csvary[$num][8];
-	$payload3 = {$csvary[$num][9];
+	$button1 = $csvary[$num][4];
+	$payload1 = $csvary[$num][5];
+	$button2 = $csvary[$num][6];
+	$payload2 = $csvary[$num][7];
+	$button3 = $csvary[$num][8];
+	$payload3 = $csvary[$num][9];
 $post = <<< EOM
 {
   "recipient":{
