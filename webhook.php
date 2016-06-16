@@ -10,7 +10,7 @@ if(isset($messaging->postback)) {
 	$payload =  $messaging->postback->payload;
 	
 	if(ctype_digit($payload)){
-	$post = build_game($id,$payload);
+	$post = build_game($id,(int) $payload);
     api_send_request($access_token, $post,$message);
 	} else {
     $post = <<< EOM
@@ -35,7 +35,7 @@ if(isset($messaging->message)) {
 	$csvary[] = str_getcsv($content);
 	
 	error_log($message);
-	error_log($csvary[0][1]);
+	//error_log($csvary[0][1]);
 	if( $message == 'じゃんけん' ){
     $post = <<< EOM
     {
@@ -87,22 +87,22 @@ $post = <<< EOM
           {
             "title":"{$csvary[0][1]}",
             "image_url":"https://lh3.googleusercontent.com/-FhcA_-jzb7Nau1zxOanijNaiDyhV1BWdPJfTEhvya_D4aK9GclZBEXwBR6-Pph5tBn6xA=s190",
-            "subtitle":"{$csvary[0][2]}",
+            "subtitle":"Soft white cotton t-shirt is back in style",
             "buttons":[
               {
-                "type":"postback",
-                "title":"{$csvary[0][4]}",
-                "payload":"{$csvary[0][5]}"
+                "type":"web_url",
+                "url":"https://petersapparel.parseapp.com/view_item?item_id=100",
+                "title":"View Item"
+              },
+              {
+                "type":"web_url",
+                "url":"https://petersapparel.parseapp.com/buy_item?item_id=100",
+                "title":"Buy Item"
               },
               {
                 "type":"postback",
-                "title":"{$csvary[0][6]}",
-                "payload":"{$csvary[0][7]}"
-              },
-              {
-                "type":"postback",
-                "title":"{$csvary[0][8]}",
-                "payload":"{$csvary[0][9]}"
+                "title":"Bookmark Item",
+                "payload":"USER_DEFINED_PAYLOAD_FOR_ITEM100"
               }              
             ]
           },
