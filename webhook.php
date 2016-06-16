@@ -36,7 +36,7 @@ if(isset($messaging->message)) {
 	$csvary = array();
 	
 	//$lines = explode('\n',$content);
-	$lines = str_getcsv($content,'\n');
+	$lines = str_getcsv(convertEOL($content),'\n');
 	$count = 0;
 	foreach ($lines as $line) {
 		//$ret = explode(',',$line);
@@ -231,4 +231,9 @@ $post = <<< EOM
 EOM;
 //error_log($post);
 return $post;
+}
+
+function convertEOL($string, $to = "\n")
+{   
+    return preg_replace("/\r\n|\r|\n/", $to, $string);
 }
