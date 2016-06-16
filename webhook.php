@@ -90,9 +90,9 @@ $post = <<< EOM
             "subtitle":"{$csvary[0][2]}",
             "buttons":[
               {
-                "type":"web_url",
-                "url":"https://petersapparel.parseapp.com/view_item?item_id=100",
-                "title":"View Item"
+                "type":"postback",
+                "title":"{$csvary[0][4]}",
+                "payload":"{$csvary[0][5]}"
               },
               {
                 "type":"web_url",
