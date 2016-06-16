@@ -103,7 +103,7 @@ $post = <<< EOM
               {
                 "type":"postback",
                 "title":"{$csvary[0][8]}",
-                "payload":"USER_DEFINED_PAYLOAD_FOR_ITEM100"
+                "payload":"{$csvary[0][9]}"
               }              
             ]
           }
