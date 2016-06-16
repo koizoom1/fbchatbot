@@ -87,6 +87,7 @@ EOM;
 	//api_get_user_profile_request($access_token, $from_user_id);
 	api_send_request($access_token, $post,$message);
 	} else if( $message == 'ゲーム' ){
+/*
 $post = <<< EOM
 {
   "recipient":{
@@ -126,6 +127,8 @@ $post = <<< EOM
   }
 }
 EOM;
+*/
+$post = build_game($id,0);
 //error_log($post);
     api_send_request($access_token, $post,$message);
 	} else {
