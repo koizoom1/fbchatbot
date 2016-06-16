@@ -186,23 +186,23 @@ $post = <<< EOM
         "template_type":"generic",
         "elements":[
           {
-            "title":"$csvary[$num][1]",
+            "title":"{$csvary[$num][1]}",
             "image_url":"https://lh3.googleusercontent.com/-FhcA_-jzb7Nau1zxOanijNaiDyhV1BWdPJfTEhvya_D4aK9GclZBEXwBR6-Pph5tBn6xA=s190",
-            "subtitle":"$csvary[$num][2]",
+            "subtitle":"{$csvary[$num][2]}",
             "buttons":[
               {
                 "type":"postback",
-                "title":"$csvary[$num][4]",
-                "payload":"$csvary[$num][5]"
+                "title":"{$csvary[$num][4]}",
+                "payload":"{$csvary[$num][5]}"
               },
               {
                 "type":"postback",
-                "title":"$csvary[$num][6]",
-                "payload":"$csvary[$num][7]"
+                "title":"{$csvary[$num][6]}",
+                "payload":"{$csvary[$num][7]}"
               },
               {
                 "type":"postback",
-                "title":"$csvary[$num][8]",
+                "title":"{$csvary[$num][8]}",
                 "payload":"$csvary[$num][9]"
               }              
             ]
