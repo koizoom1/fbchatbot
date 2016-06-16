@@ -35,7 +35,7 @@ if(isset($messaging->message)) {
 	$csvary[] = str_getcsv($content);
 	
 	error_log($message);
-	//error_log($csvary[0][1]);
+	error_log($csvary[0][9]);
 	if( $message == 'じゃんけん' ){
     $post = <<< EOM
     {
