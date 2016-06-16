@@ -134,7 +134,7 @@ EOM;
             "id":"{$id}"
         },
         "message":{
-            "text":"{$content}"
+            "text":"{$message}"
         }
     }
 EOM;
