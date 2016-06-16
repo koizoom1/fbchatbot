@@ -174,6 +174,15 @@ error_log("api_get_user_profile_request start".$from_user_id);
 }
 
 function build_game($id,$num){
+	$title = $csvary[$num][1];
+	$subtitle = $csvary[$num][2];
+	$imgurl = $csvary[$num][3];
+	$button1 = {$csvary[$num][4]};
+	$payload1 = {$csvary[$num][5]};
+	$button2 = {$csvary[$num][6]};
+	$payload2 = {$csvary[$num][7]};
+	$button3 = {$csvary[$num][8]};
+	$payload3 = {$csvary[$num][9]};
 $post = <<< EOM
 {
   "recipient":{
@@ -186,24 +195,24 @@ $post = <<< EOM
         "template_type":"generic",
         "elements":[
           {
-            "title":"{$csvary[$num][1]}",
+            "title":"{$title}",
             "image_url":"https://lh3.googleusercontent.com/-FhcA_-jzb7Nau1zxOanijNaiDyhV1BWdPJfTEhvya_D4aK9GclZBEXwBR6-Pph5tBn6xA=s190",
-            "subtitle":"{$csvary[$num][2]}",
+            "subtitle":"{$subtitle}",
             "buttons":[
               {
                 "type":"postback",
-                "title":"{$csvary[$num][4]}",
-                "payload":"{$csvary[$num][5]}"
+                "title":"{$button1}",
+                "payload":"{$payload1}"
               },
               {
                 "type":"postback",
-                "title":"{$csvary[$num][6]}",
-                "payload":"{$csvary[$num][7]}"
+                "title":"{$button2}",
+                "payload":"{$payload2}"
               },
               {
                 "type":"postback",
-                "title":"{$csvary[$num][8]}",
-                "payload":"$csvary[$num][9]"
+                "title":"{$button3}",
+                "payload":"{$payload3}"
               }              
             ]
           }
@@ -213,6 +222,6 @@ $post = <<< EOM
   }
 }
 EOM;
-error_log($post);
+//error_log($post);
 return $post;
 }
