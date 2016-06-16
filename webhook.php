@@ -86,7 +86,7 @@ $post = <<< EOM
         "elements":[
           {
             "title":"{$csvary[0][1]}",
-            "image_url":"https://lh3.googleusercontent.com/-FhcA_-jzb7Nau1zxOanijNaiDyhV1BWdPJfTEhvya_D4aK9GclZBEXwBR6-Pph5tBn6xA",
+            "image_url":"https://lh3.googleusercontent.com/-FhcA_-jzb7Nau1zxOanijNaiDyhV1BWdPJfTEhvya_D4aK9GclZBEXwBR6-Pph5tBn6xA=s190",
             "subtitle":"{$csvary[0][2]}",
             "buttons":[
               {
@@ -95,9 +95,9 @@ $post = <<< EOM
                 "payload":"{$csvary[0][5]}"
               },
               {
-                "type":"web_url",
-                "url":"https://petersapparel.parseapp.com/buy_item?item_id=100",
-                "title":"Buy Item"
+                "type":"postback",
+                "title":"{$csvary[0][6]}",
+                "payload":"{$csvary[0][7]}"
               },
               {
                 "type":"postback",
