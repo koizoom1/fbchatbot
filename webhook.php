@@ -105,28 +105,6 @@ $post = <<< EOM
                 "payload":"USER_DEFINED_PAYLOAD_FOR_ITEM100"
               }              
             ]
-          },
-          {
-            "title":"Classic Grey T-Shirt",
-            "image_url":"https://lh3.googleusercontent.com/9Ex9NjwjQfds7-_g7JbQuGfFsNqgwon-4ymhp6UAZNhNFvvha5T0bsYKoGdJR5G5MN-izQ",
-            "subtitle":"Soft gray cotton t-shirt is back in style",
-            "buttons":[
-              {
-                "type":"web_url",
-                "url":"https://petersapparel.parseapp.com/view_item?item_id=101",
-                "title":"View Item"
-              },
-              {
-                "type":"web_url",
-                "url":"https://petersapparel.parseapp.com/buy_item?item_id=101",
-                "title":"Buy Item"
-              },
-              {
-                "type":"postback",
-                "title":"Bookmark Item",
-                "payload":"USER_DEFINED_PAYLOAD_FOR_ITEM101"
-              }              
-            ]
           }
         ]
       }
