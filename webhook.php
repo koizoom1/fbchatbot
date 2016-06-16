@@ -3,6 +3,7 @@ $access_token = "EAABZCZBOnpfiMBAITE7qgXFfkPfruG7ab9kM4l0ZCuUUeuWlz72gomIA0W3mer
 $json_string = file_get_contents('php://input');
 $json_object = json_decode($json_string);
 $messaging = $json_object->entry{0}->messaging{0};
+$url = 'https://docs.google.com/uc?authuser=0&id=0B3suUrhlktR0QXYyamItc1I3bjQ&export=download';
 
 $id = $messaging->sender->id;
 if(isset($messaging->postback)) {
@@ -23,6 +24,9 @@ EOM;
 if(isset($messaging->message)) {
     //$id = $messaging->sender->id;
     $message =  $messaging->message->text;
+	
+	$content = file_get_contents($url); // HTMLを取得
+	
 	error_log($message);
 	if( $message == 'じゃんけん' ){
     $post = <<< EOM
@@ -130,7 +134,7 @@ EOM;
             "id":"{$id}"
         },
         "message":{
-            "text":"{$message}"
+            "text":"{$content}"
         }
     }
 EOM;
