@@ -49,7 +49,7 @@ if(isset($messaging->message)) {
 	
 	
 	error_log($message);
-	error_log($csvary[0][9]);
+	error_log($csvary[0][8]);
 	if( $message == 'じゃんけん' ){
     $post = <<< EOM
     {
