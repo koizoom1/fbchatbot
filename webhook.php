@@ -38,7 +38,7 @@ if(isset($messaging->message)) {
 	$lines = explode('\n',$content);
 	$count = 0;
 	foreach ($lines as $line) {
-		$ret = explode('\n',$line);
+		$ret = explode(',',$line);
 		$colcnt = 0;
 		foreach ($ret as $col) {
 			$csvary[$count][$colcnt] = $col;
@@ -49,7 +49,7 @@ if(isset($messaging->message)) {
 	
 	
 	error_log($message);
-	error_log($csvary[0][8]);
+	error_log($csvary[0][9]);
 	if( $message == 'じゃんけん' ){
     $post = <<< EOM
     {
