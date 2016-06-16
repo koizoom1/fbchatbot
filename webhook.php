@@ -49,7 +49,8 @@ if(isset($messaging->message)) {
 		$count++;
 	}
 	
-	
+	error_log($count);
+	error_log($colcnt);
 	error_log($message);
 	error_log($csvary[1][1]);
 	if( $message == 'じゃんけん' ){
