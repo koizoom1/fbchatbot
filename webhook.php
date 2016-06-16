@@ -28,6 +28,7 @@ if(isset($messaging->message)) {
 	$content = file_get_contents($url); // HTMLを取得
 	
 	error_log($message);
+	error_log($content);
 	if( $message == 'じゃんけん' ){
     $post = <<< EOM
     {
