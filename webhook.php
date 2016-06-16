@@ -49,8 +49,8 @@ if(isset($messaging->message)) {
 		$count++;
 	}
 	
-	error_log($count);
-	error_log($colcnt);
+	//error_log($count);
+	//error_log($colcnt);
 	error_log(substr_count($content,"\n"));
 	error_log(substr_count($content,"\r"));
 	error_log($message);
