@@ -26,9 +26,10 @@ if(isset($messaging->message)) {
     $message =  $messaging->message->text;
 	
 	$content = file_get_contents($url); // HTMLを取得
+	$csvary[] = str_getcsv($content);
 	
 	error_log($message);
-	error_log($content);
+	error_log($csvary);
 	if( $message == 'じゃんけん' ){
     $post = <<< EOM
     {
