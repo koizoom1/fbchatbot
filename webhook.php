@@ -116,7 +116,7 @@ $post = <<< EOM
               {
                 "type":"postback",
                 "title":"{$csvary[0][8]}",
-                "payload":"$csvary[0][9]"
+                "payload":"{$csvary[0][9]}"
               }              
             ]
           }
@@ -222,6 +222,6 @@ $post = <<< EOM
   }
 }
 EOM;
-//error_log($post);
+error_log($post);
 return $post;
 }
