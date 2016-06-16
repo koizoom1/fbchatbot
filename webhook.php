@@ -38,7 +38,7 @@ if(isset($messaging->message)) {
 	$lines = explode('\n',$content);
 	$count = 0;
 	foreach ($lines as $line) {
-		$ret[] = str_getcsv($line);
+		$ret = str_getcsv($line);
 		$colcnt = 0;
 		foreach ($ret as $col) {
 			$csvary[$count][$colcnt] = $col;
