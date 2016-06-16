@@ -86,8 +86,8 @@ $post = <<< EOM
         "elements":[
           {
             "title":"{$csvary[0][1]}",
-            "image_url":"https://lh3.googleusercontent.com/-FhcA_-jzb7Nau1zxOanijNaiDyhV1BWdPJfTEhvya_D4aK9GclZBEXwBR6-Pph5tBn6xA=s190",
-            "subtitle":"Soft white cotton t-shirt is back in style",
+            "image_url":"https://lh3.googleusercontent.com/-FhcA_-jzb7Nau1zxOanijNaiDyhV1BWdPJfTEhvya_D4aK9GclZBEXwBR6-Pph5tBn6xA",
+            "subtitle":"{$csvary[0][2]}",
             "buttons":[
               {
                 "type":"web_url",
@@ -101,8 +101,8 @@ $post = <<< EOM
               },
               {
                 "type":"postback",
-                "title":"Bookmark Item",
-                "payload":"USER_DEFINED_PAYLOAD_FOR_ITEM100"
+                "title":"{$csvary[0][8]}",
+                "payload":"{$csvary[0][9]}"
               }              
             ]
           }
