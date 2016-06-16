@@ -51,6 +51,8 @@ if(isset($messaging->message)) {
 	
 	error_log($count);
 	error_log($colcnt);
+	error_log(mb_substr_count($content,"\n"));
+	error_log(mb_substr_count($content,"\r"));
 	error_log($message);
 	error_log($csvary[1][1]);
 	if( $message == 'じゃんけん' ){
