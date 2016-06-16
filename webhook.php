@@ -116,7 +116,7 @@ $post = <<< EOM
               {
                 "type":"postback",
                 "title":"{$csvary[0][8]}",
-                "payload":"aaa"
+                "payload":"$csvary[0][9]"
               }              
             ]
           }
