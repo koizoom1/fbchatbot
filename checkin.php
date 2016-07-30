@@ -16,9 +16,8 @@ $post = <<< EOM
     }
 }
 EOM;
-    api_send_request($access_token, $post,$message);
+api_send_request($access_token, $post,$message);
 
-}
 
 function api_send_request($access_token, $post,$message) {
     error_log("api_get_message_content_request start".$message);
