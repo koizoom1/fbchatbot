@@ -19,7 +19,7 @@ $post = <<< EOM
         "elements":[
           {
             "title":"わたしのこと、覚えてる？",
-            "image_url":"https://lh3.googleusercontent.com/-FhcA_-jzb7Nau1zxOanijNaiDyhV1BWdPJfTEhvya_D4aK9GclZBEXwBR6-Pph5tBn6xA=s190",
+            "image_url":"https://dl.dropboxusercontent.com/u/18796572/gibasachan/inove_gibasa.jpg",
             "subtitle":"藻塩焼神事が行われる神社はどこでしょう？",
             "buttons":[
               {
