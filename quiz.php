@@ -18,24 +18,24 @@ $post = <<< EOM
         "template_type":"generic",
         "elements":[
           {
-            "title":"わたしのこと、覚えてる？",
+            "title":"こんな時にあなたはどうしますか？",
             "image_url":"https://dl.dropboxusercontent.com/u/18796572/gibasachan/inove_gibasa.jpg",
-            "subtitle":"藻塩焼神事が行われる神社はどこでしょう？",
+            "subtitle":"家にいる時に地震が起きたらどうしますか？",
             "buttons":[
               {
                 "type":"postback",
-                "title":"鹽竈神社",
-                "payload":"shioogama"
+                "title":"ガスの元栓を締める",
+                "payload":"不正解"
               },
               {
                 "type":"postback",
-                "title":"御釜神社",
-                "payload":"okama"
+                "title":"ドアや窓を開ける",
+                "payload":"不正解"
               },
               {
                 "type":"postback",
-                "title":"祓ヶ崎稲荷神社",
-                "payload":"inari"
+                "title":"机の下に隠れる",
+                "payload":"正解"
               }              
             ]
           }
