@@ -4,6 +4,7 @@ $json_string = file_get_contents('php://input');
 $json_object = json_decode($json_string);
 $messaging = $json_object->entry{0}->messaging{0};
 $url = 'https://docs.google.com/uc?authuser=0&id=0B3suUrhlktR0QXYyamItc1I3bjQ&export=download';
+$nebagiba = 'https://dl.dropboxusercontent.com/u/18796572/stamp/14.png';
 
 $id = $messaging->sender->id;
 if(isset($messaging->postback)) {
@@ -19,7 +20,7 @@ if(isset($messaging->postback)) {
             "id":"{$id}"
         },
         "message":{
-            "text":"{$payload}を出しました！"
+            "text":"{$payload}！"
         }
     }
 EOM;
@@ -135,6 +136,9 @@ EOM;
 
 //$post = build_game($id,0);
 //error_log($post);
+    api_send_request($access_token, $post,$message);
+	} else if( $message == 'ねばぎば' ){
+	
     api_send_request($access_token, $post,$message);
 	} else {
     $post = <<< EOM

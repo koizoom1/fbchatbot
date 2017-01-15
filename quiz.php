@@ -18,24 +18,24 @@ $post = <<< EOM
         "template_type":"generic",
         "elements":[
           {
-            "title":"こんな時にあなたはどうしますか？",
+            "title":"どこにご飯食べに行こうか？",
             "image_url":"https://dl.dropboxusercontent.com/u/18796572/gibasachan/inove_gibasa.jpg",
-            "subtitle":"家にいる時に地震が起きたらどうしますか？",
+            "subtitle":"小高のおいしいところを教えてね",
             "buttons":[
               {
                 "type":"postback",
-                "title":"ガスの元栓を締める",
-                "payload":"不正解"
+                "title":"双葉食堂",
+                "payload":"ラーメンたのしみ"
               },
               {
                 "type":"postback",
-                "title":"ドアや窓を開ける",
-                "payload":"不正解"
+                "title":"浦島鮨",
+                "payload":"特上おごってね"
               },
               {
                 "type":"postback",
-                "title":"机の下に隠れる",
-                "payload":"正解"
+                "title":"東町エンガワ商店",
+                "payload":"お菓子たくさん買ってね"
               }              
             ]
           }
